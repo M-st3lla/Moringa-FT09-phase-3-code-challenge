@@ -19,6 +19,9 @@ def main():
     conn = get_db_connection()
     cursor = conn.cursor()
 
+    author = Author(name=author_name)
+    magazine = Magazine(name=magazine_name, category=magazine_category)
+    article = Article(title=article_title, content=article_content, author_id=author.id, magazine_id=magazine.id)
 
     '''
         The following is just for testing purposes, 
