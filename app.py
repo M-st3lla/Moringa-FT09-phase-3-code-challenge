@@ -5,10 +5,10 @@ from models.author import Author
 from models.magazine import Magazine
 
 def main():
-    # Initialize the database and create tables
+    # Initialize the database then create tables
     create_tables()
 
-    #user input
+    # user input
     author_name = input("Enter author's name: ")
     magazine_name = input("Enter magazine name: ")
     magazine_category = input("Enter magazine category: ")
@@ -19,11 +19,10 @@ def main():
     magazine = Magazine(name=magazine_name, category=magazine_category)
     article = Article(title=article_title, content=article_content, author_id=author.id, magazine_id=magazine.id)
 
-
+    
     print(f"\nCreated Author: {author}")
     print(f"Created Magazine: {magazine}")
     print(f"Created Article: {article}")
-
 
     author_articles = author.articles()
     print(f"\nArticles by Author {author.name}:")
